@@ -10,6 +10,8 @@ using namespace std;
 
 void front_boilerplate(string noteTitle, ostream &outputFile);
 void back_boilerplate(ostream &outputFile);
+void embed_link(ostream &outputFile);
+void embed_table(ostream &outputFile);
 
 int main(int argc, char *argv[])
 {
@@ -38,8 +40,21 @@ int main(int argc, char *argv[])
         else
         {
             outputFile << "            <p>" << endl;
-            outputFile << "            " << line << endl;
-            outputFile << "            </p>" << endl
+            outputFile << "            ";
+
+            istringstream iss(line);
+            string wordInLine;
+
+            while (iss >> wordInLine)
+            {
+                if (wordInLine == "<link>")
+                    embed_link(outputFile);
+                else
+                    outputFile << wordInLine << " ";
+            }
+
+            outputFile << endl
+                       << "            </p>" << endl
                        << endl;
         }
     }
@@ -73,4 +88,9 @@ void back_boilerplate(ostream &outputFile)
     outputFile << "        </div>" << endl;
     outputFile << "    </body>" << endl;
     outputFile << "</html>" << endl;
+}
+
+void embed_link(ostream &outputFile)
+{
+    outputFile << "<a class=\"inline\" href=\"REPLACE_LINK_HERE\" target=\"_blank\">REPLACE_LINK_NAME_HERE</a> ";
 }
