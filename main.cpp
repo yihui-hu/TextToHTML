@@ -11,7 +11,7 @@ using namespace std;
 void front_boilerplate(string noteTitle, ostream &outputFile);
 void back_boilerplate(ostream &outputFile);
 void embed_link(ostream &outputFile);
-void embed_table(ostream &outputFile);
+void embed_image(ostream &outputFile);
 
 int main(int argc, char *argv[])
 {
@@ -28,7 +28,6 @@ int main(int argc, char *argv[])
     outputFile.open(argv[2]);
 
     string line;
-
     inputFile >> line;
 
     front_boilerplate(line, outputFile);
@@ -49,6 +48,8 @@ int main(int argc, char *argv[])
             {
                 if (wordInLine == "<link>")
                     embed_link(outputFile);
+                else if (wordInLine == "<image>")
+                    embed_image(outputFile);
                 else
                     outputFile << wordInLine << " ";
             }
@@ -93,4 +94,9 @@ void back_boilerplate(ostream &outputFile)
 void embed_link(ostream &outputFile)
 {
     outputFile << "<a class=\"inline\" href=\"REPLACE_LINK_HERE\" target=\"_blank\">REPLACE_LINK_NAME_HERE</a> ";
+}
+
+void embed_image(ostream &outputFile)
+{
+    outputFile << "<img class=\"normal\" src=\"REPLACE_IMAGE_LINK_HERE\" alt=\"REPLACE_IMAGE_ALT_DESC_HERE\">";
 }
