@@ -8,7 +8,7 @@ CXXFLAGS = -O2 -Wall -Wextra -Wpedantic -Wshadow
 LDFLAGS  = -O2 
 
 TextToHTML: main.o
-	$(CXX) $(LDFLAGS) -o gerp main.o
+	$(CXX) $(LDFLAGS) -o TextToHTML main.o
 
 main.o: main.cpp
 	$(CXX) $(CXXFLAGS) -c main.cpp
