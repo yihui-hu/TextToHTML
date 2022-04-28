@@ -1,2 +1,2 @@
 # TextToHTML
-converting plain .txt files into html code
+converts plain .txt files into html code
