@@ -11,17 +11,17 @@
             <div class="header">
                 example
             </div>
-            
+
             <p>
-            Hello world!
+            Hello world! 
             </p>
 
             <p>
-            This is an example text file. This is a multi-line paragraph. It is all written on one line but it should still wrap around and make one paragraph with the typical width constraints of a CSS file. 
+            This is an example text file. <a class="inline" href="REPLACE_LINK_HERE" target="_blank">REPLACE_LINK_NAME_HERE</a> This is a multi-line paragraph. It is all written on one line but it should still wrap around and make one paragraph with the typical width constraints of a CSS file. 
             </p>
 
             <p>
-            I hope everything works.
+            I hope everything works. 
             </p>
 
             <p></p>
