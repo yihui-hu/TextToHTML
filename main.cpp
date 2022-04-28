@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 {
     if (argc != 3)
     {
-        cerr << "Usage: ./TextToHTML inputFile outputFile" << endl;
+        cerr << "Usage: ./TextToHTML plainTextFile htmlOutputFile" << endl;
         exit(EXIT_FAILURE);
     }
 
