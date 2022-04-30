@@ -12,6 +12,7 @@ void front_boilerplate(string noteTitle, ostream &outputFile);
 void back_boilerplate(ostream &outputFile);
 void embed_link(ostream &outputFile);
 void embed_image(ostream &outputFile);
+void notes_page_table_template(ostream &outputFile);
 
 int main(int argc, char *argv[])
 {
@@ -62,13 +63,15 @@ int main(int argc, char *argv[])
                     outputFile << wordInLine << " ";
             }
 
-            outputFile << endl << "            </p>" << endl
+            outputFile << endl
+                       << "            </p>" << endl
                        << endl;
         }
     }
 
     // add remaining boilerplate
     back_boilerplate(outputFile);
+    notes_page_table_template(outputFile);
 }
 
 void front_boilerplate(string noteTitle, ostream &outputFile)
@@ -107,4 +110,13 @@ void embed_link(ostream &outputFile)
 void embed_image(ostream &outputFile)
 {
     outputFile << "<img class=\"normal\" src=\"REPLACE_IMAGE_LINK_HERE\" alt=\"REPLACE_IMAGE_ALT_DESC_HERE\">";
+}
+
+void notes_page_table_template(ostream &outputFile)
+{
+    outputFile << endl
+               << "<tr>" << endl
+               << "    <td>REPLACE_DATE_HERE</td>" << endl
+               << "    <td><a class=\"inline\" href=\"../pages/notes/REPLACE_NOTES_LINK_HERE\">REPLACE_NOTES_NAME_HERE</a></td>" << endl
+               << "</tr>" << endl;
 }
