@@ -1,0 +1,13 @@
+read_time_estimate
+
+In the interest of learning new things, I decided on implementing a reading time estimate to my notes.
+
+I found a javascript snippet online that does just that and modified it slightly:
+
+<image>
+
+Also, since there was already a variable for the total word count, I decided to surface that number and have it exist alongside the reading time estimate. Might as well.
+
+I'm interested to experiment with more javascript. How I understand it is a way of embedding functions into your websites and making them more dynamic/interactive. 
+
+I stored the .js file in a separate folder, and used [script][/script] to call them in the html files. This means I could probably have a bunch of separate .js files for each function I want to use, and call them when needed.

@@ -2,23 +2,23 @@
 <html class="normal" lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <title>hello_world</title>
+        <title>read_time_estimate</title>
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <link rel="stylesheet" href="../../styles.css">
     </head>
     <body class="copy" id="article">
         <div class="container">
             <div class="header">
-                hello_world
+                read_time_estimate
             </div>
             <p class="readtime"><span id="time"></span></p>
 
             <p>
-            Hello world! 
+            In the interest of learning new things, I decided on implementing a reading time estimate to my notes. 
             </p>
 
             <p>
-            This is an example text file. <a class="inline" href="REPLACE_LINK_HERE" target="_blank">REPLACE_LINK_NAME_HERE</a> <-- Here is a link. This is a multi-line paragraph. It is all written on one line but it should still wrap around and make one paragraph with the typical width constraints of a CSS file. 
+            I found a javascript snippet online that does just that and modified it slightly: 
             </p>
 
             <p>
@@ -26,7 +26,15 @@
             </p>
 
             <p>
-            I hope everything works. 
+            Also, since there was already a variable for the total word count, I decided to surface that number and have it exist alongside the reading time estimate. Might as well. 
+            </p>
+
+            <p>
+            I'm interested to experiment with more javascript. How I understand it is a way of embedding functions into your websites and making them more dynamic/interactive. 
+            </p>
+
+            <p>
+            I stored the .js file in a separate folder, and used [script][/script] to call them in the html files. This means I could probably have a bunch of separate .js files for each function I want to use, and call them when needed. 
             </p>
 
             <p></p>

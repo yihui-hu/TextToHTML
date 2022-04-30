@@ -84,11 +84,12 @@ void front_boilerplate(string noteTitle, ostream &outputFile)
                << "        <meta name=\"viewport\" content=\"width=device-width,initial-scale=1.0\">" << endl
                << "        <link rel=\"stylesheet\" href=\"../../styles.css\">" << endl
                << "    </head>" << endl
-               << "    <body>" << endl
+               << "    <body class=\"copy\" id=\"article\">" << endl
                << "        <div class=\"container\">" << endl
                << "            <div class=\"header\">" << endl
                << "                " << noteTitle << endl
                << "            </div>" << endl
+               << "            <p class=\"readtime\"><span id=\"time\"></span></p>" << endl
                << endl;
 }
 
@@ -98,6 +99,7 @@ void back_boilerplate(ostream &outputFile)
                << "            <a class = \"main\" href = \"../notes.html\">⚛&#xFE0E;return to notes</a>" << endl
                << "            <a class = \"main\" href = \"../../index.html\">⁖ return to main</a>" << endl
                << "        </div>" << endl
+               << "        <script src=\"../../js/readTimeEstimate.js\"></script>" << endl
                << "    </body>" << endl
                << "</html>" << endl;
 }
