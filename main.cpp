@@ -30,65 +30,73 @@ int main(int argc, char *argv[])
     string line;
     inputFile >> line;
 
+    // add starter boilerplate
     front_boilerplate(line, outputFile);
 
+    // each line is considered a block in the plain text
     while (getline(inputFile, line))
     {
+        // if empty, ignore
         if (line == "")
             continue;
         else
         {
-            outputFile << "            <p>" << endl;
-            outputFile << "            ";
+            // encapsulate the block in <p> and </p>
+            outputFile << "            <p>" << endl
+                       << "            ";
 
+            // process each word in the block
             istringstream iss(line);
             string wordInLine;
 
             while (iss >> wordInLine)
             {
+                // flag to create template for links
                 if (wordInLine == "<link>")
                     embed_link(outputFile);
+                // flag to create template for images
                 else if (wordInLine == "<image>")
                     embed_image(outputFile);
+                // process word as usual
                 else
                     outputFile << wordInLine << " ";
             }
 
-            outputFile << endl
-                       << "            </p>" << endl
+            outputFile << endl << "            </p>" << endl
                        << endl;
         }
     }
 
+    // add remaining boilerplate
     back_boilerplate(outputFile);
 }
 
 void front_boilerplate(string noteTitle, ostream &outputFile)
 {
-    outputFile << "<!DOCTYPE html>" << endl;
-    outputFile << "<html lang=\"en\" dir=\"ltr\">" << endl;
-    outputFile << "    <head>" << endl;
-    outputFile << "        <meta charset=\"utf-8\">" << endl;
-    outputFile << "        <title>" << noteTitle << "</title>" << endl;
-    outputFile << "        <meta name=\"viewport\" content=\"width=device-width,initial-scale=1.0\">" << endl;
-    outputFile << "        <link rel=\"stylesheet\" href=\"../../styles.css\">" << endl;
-    outputFile << "    </head>" << endl;
-    outputFile << "    <body>" << endl;
-    outputFile << "        <div class=\"container\">" << endl;
-    outputFile << "            <div class=\"header\">" << endl;
-    outputFile << "                " << noteTitle << endl;
-    outputFile << "            </div>" << endl
+    outputFile << "<!DOCTYPE html>" << endl
+               << "<html class=\"normal\" lang=\"en\" dir=\"ltr\">" << endl
+               << "    <head>" << endl
+               << "        <meta charset=\"utf-8\">" << endl
+               << "        <title>" << noteTitle << "</title>" << endl
+               << "        <meta name=\"viewport\" content=\"width=device-width,initial-scale=1.0\">" << endl
+               << "        <link rel=\"stylesheet\" href=\"../../styles.css\">" << endl
+               << "    </head>" << endl
+               << "    <body>" << endl
+               << "        <div class=\"container\">" << endl
+               << "            <div class=\"header\">" << endl
+               << "                " << noteTitle << endl
+               << "            </div>" << endl
                << endl;
 }
 
 void back_boilerplate(ostream &outputFile)
 {
-    outputFile << "            <p></p>" << endl;
-    outputFile << "            <a class = \"main\" href = \"../notes.html\">⚛&#xFE0E;return to notes</a>" << endl;
-    outputFile << "            <a class = \"main\" href = \"../../index.html\">⁖ return to main</a>" << endl;
-    outputFile << "        </div>" << endl;
-    outputFile << "    </body>" << endl;
-    outputFile << "</html>" << endl;
+    outputFile << "            <p></p>" << endl
+               << "            <a class = \"main\" href = \"../notes.html\">⚛&#xFE0E;return to notes</a>" << endl
+               << "            <a class = \"main\" href = \"../../index.html\">⁖ return to main</a>" << endl
+               << "        </div>" << endl
+               << "    </body>" << endl
+               << "</html>" << endl;
 }
 
 void embed_link(ostream &outputFile)
