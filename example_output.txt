@@ -2,18 +2,18 @@
 <html class="normal" lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <title>Hello</title>
+        <title>hello_world</title>
         <meta name="viewport" content="width=device-width,initial-scale=1.0">
         <link rel="stylesheet" href="../../styles.css">
     </head>
     <body>
         <div class="container">
             <div class="header">
-                Hello
+                hello_world
             </div>
 
             <p>
-            world! 
+            Hello world! 
             </p>
 
             <p>
@@ -34,3 +34,8 @@
         </div>
     </body>
 </html>
+
+<tr>
+    <td>REPLACE_DATE_HERE</td>
+    <td><a class="inline" href="../pages/notes/REPLACE_NOTES_LINK_HERE">REPLACE_NOTES_NAME_HERE</a></td>
+</tr>
